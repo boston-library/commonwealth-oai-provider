@@ -1,7 +1,6 @@
 # frozen_string_literal: true
-class CatalogController < ApplicationController
 
-  include Blacklight::Catalog
+class CatalogController < ApplicationController
   include BlacklightOaiProvider::Controller
 
   configure_blacklight do |config|
