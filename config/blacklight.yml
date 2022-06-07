@@ -1,10 +1,20 @@
 load_defaults: 7.25.3
+
+default: &default
+  adapter: solr
+
 development:
-  adapter: solr
+  <<: *default
   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core" %>
+
 test: &test
-  adapter: solr
+  <<: *default
   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core" %>
+
+staging:
+  <<: *default
+  url: <%= Rails.application.credentials.dig(:solr, :url) %>
+
 production:
-  adapter: solr
-  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core" %>
+  <<: *default
+  url: <%= Rails.application.credentials.dig(:solr, :url) %>

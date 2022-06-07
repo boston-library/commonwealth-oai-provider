@@ -5,6 +5,4 @@ class ApplicationController < ActionController::API
   include ActionController::MimeResponds
   include Blacklight::Controller
   layout :determine_layout if respond_to? :layout
-
-  protect_from_forgery with: :exception
 end

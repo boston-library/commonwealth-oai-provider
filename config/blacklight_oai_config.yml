@@ -1,0 +1,49 @@
+development:
+  provider:
+    repository_name: 'Commonwealth OAI Provider Development'
+    respository_url: 'http://localhost:3000/catalog/oai'
+    record_prefix: 'oai:dc3dev.bpl.org'
+    admin_email: 'dev@localhost'
+    sample_id: 'bpl-dev:abc123456'
+  document:
+    limit: 25
+    set_fields:
+      - label: 'collection'
+        solr_field: 'collection_name_ssim'
+
+test:
+  provider:
+    repository_name: 'Commonwealth OAI Provider Test'
+    respository_url: 'http://localhost:3000/catalog/oai'
+    record_prefix: 'oai:dc3dev.bpl.org'
+    admin_email: 'test@localhost'
+    sample_id: 'bpl-dev:abc123456'
+  document:
+    limit: 25
+    set_fields:
+      - label: 'collection'
+        solr_field: 'collection_name_ssim'
+
+staging:
+  provider:
+    repository_name: 'Commonwealth OAI Provider Staging'
+    respository_url: 'https://oai-dc3dev.bpl.org/catalog/oai'
+    record_prefix: 'oai:digitalcommonwealth.org'
+    admin_email: ''
+  document:
+    limit: 25
+    set_fields:
+      - label: ''
+        solr_field: ''
+
+production:
+  provider:
+    repository_name: 'Commonwealth OAI Provider Production'
+    respository_url: 'https://oai.digitalcommonwealth.org/catalog/oai'
+    record_prefix: 'oai:digitalcommonwealth.org'
+    admin_email: ''
+  document:
+    limit: 25
+    set_fields:
+      - label: ''
+        solr_field: ''
