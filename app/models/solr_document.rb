@@ -4,7 +4,9 @@ class SolrDocument
   include Blacklight::Solr::Document
   include BlacklightOaiProvider::SolrDocument
 
-  SolrDocument.extension_parameters[:mods_source_field] = 'mods_xml_ss'
+  MODS_DOC_KEY = 'mods_xml_ss'
+
+  SolrDocument.extension_parameters[:mods_source_field] = MODS_DOC_KEY
 
   self.timestamp_key = 'system_create_dtsi'
   # self.unique_key = 'id'
@@ -17,7 +19,7 @@ class SolrDocument
   use_extension(Blacklight::Document::DublinCore)
   use_extension(Blacklight::Document::Mods)
 
-  def to_mods
+  def to_oai_mods
     export_as_oai_mods_xml
   end
 

@@ -14,17 +14,13 @@ module Blacklight::Document::Mods
   end
 
   def export_as_oai_mods_xml
-    load_mods
+    Zlib::Inflate.inflate(Base64.decode64(fetch(mods_source_field))).gsub('<?xml version="1.0" encoding="UTF-8"?>', '')
   end
 
   alias_method :export_as_xml, :export_as_oai_mods_xml
   alias_method :export_as_mods_xml, :export_as_oai_mods_xml
 
   private
-
-  def load_mods
-    Zlib::Inflate.inflate(Base64.decode64(fetch(mods_source_field))).gsub('<?xml version="1.0" encoding="UTF-8"?>', '')
-  end
 
   def mods_source_field
     self.class.extension_parameters[:mods_source_field]

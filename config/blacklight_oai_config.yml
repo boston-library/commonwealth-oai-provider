@@ -8,9 +8,8 @@ development:
   document:
     limit: 25
     set_fields:
-      - label: 'collection'
-        solr_field: 'collection_name_ssim'
-
+      - label: 'ark_id'
+        solr_field: 'collection_ark_id_ssim'
 test:
   provider:
     repository_name: 'Commonwealth OAI Provider Test'
@@ -22,7 +21,7 @@ test:
     limit: 25
     set_fields:
       - label: 'collection'
-        solr_field: 'collection_name_ssim'
+        solr_field: 'collection'
 
 staging:
   provider:

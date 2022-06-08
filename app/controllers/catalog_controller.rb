@@ -3,8 +3,9 @@
 class CatalogController < ApplicationController
   include Blacklight::Catalog
   include BlacklightOaiProvider::Controller
+  include BlacklightOaiOverrides
 
-  OAI_CONFIG = Rails.application.config_for('blacklight_oai_config').merge(document: { set_model: CuratorListSet }).freeze
+  OAI_CONFIG = Rails.application.config_for('blacklight_oai_config').deep_merge(document: { set_model: CuratorListSet }).freeze
   OAI_SEARCH_PARAMS = %i(verb identifier metadataPrefix set from until resumptionToken)
 
   configure_blacklight do |config|
@@ -213,9 +214,5 @@ class CatalogController < ApplicationController
     def render_sms_action?
       false
     end
-  end
-
-  def oai_provider
-    @oai_provider ||= CuratorSolrDocumentProvider.new(self, oai_config)
   end
 end

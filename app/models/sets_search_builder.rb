@@ -1,17 +1,19 @@
 # frozen_string_literal: true
 
-class SearchBuilder < Blacklight::SearchBuilder
+class SetsSearchBuilder < Blacklight::SearchBuilder
   include Blacklight::Solr::SearchBuilderBehavior
 
-  self.default_processor_chain += [:harvestable_filter, :digital_objects_filter]
+  self.default_processor_chain += [
+    :harvestable_filter, :collections_filter
+  ]
 
   def harvestable_filter(solr_parameters = {})
     solr_parameters[:fq] ||= []
     solr_parameters[:fq] << '+harvesting_status_bsi:true'
   end
 
-  def digital_objects_filter(solr_parameters = {})
+  def collections_filter(solr_parameters = {})
     solr_parameters[:fq] ||= []
-    solr_parameters[:fq] << '+curator_model_suffix_ssi:DigitalObject'
+    solr_parameters[:fq] << '+curator_model_suffix_ssi:"Collection"'
   end
 end
