@@ -5,7 +5,7 @@ class CatalogController < ApplicationController
   include BlacklightOaiProvider::Controller
   include BlacklightOaiOverrides
 
-  OAI_CONFIG = Rails.application.config_for('blacklight_oai_config').deep_merge(document: { set_model: CuratorListSet }).freeze
+  OAI_CONFIG = Rails.application.config_for('blacklight_oai_config').deep_merge(provider: { deletion_support: OAI::Const::Delete::NO }, document: { set_model: CuratorListSet }).freeze
   OAI_SEARCH_PARAMS = %i(verb identifier metadataPrefix set from until resumptionToken)
 
   configure_blacklight do |config|

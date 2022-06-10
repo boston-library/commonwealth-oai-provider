@@ -10,7 +10,7 @@ class CuratorListSetsResponse < BlacklightOaiProvider::Response::ListSets
           r.set do
             r.setSpec set.spec
             r.setName set.name
-            r.setDescription(set.description) if set.respond_to?(:description)
+            r.setDescription(set.description) if set.respond_to?(:description) && set.description.present?
           end
         end
       end

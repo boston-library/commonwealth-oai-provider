@@ -13,7 +13,7 @@ class SolrDocument
 
   use_extension(Blacklight::Document::Mods)
 
-  def to_oai_mods
+  def to_mods
     export_as_oai_mods_xml
   end
 

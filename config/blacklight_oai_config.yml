@@ -6,7 +6,7 @@ development:
     admin_email: 'dev@localhost'
     sample_id: 'bpl-dev:abc123456'
   document:
-    limit: 1
+    limit: 25
     set_fields:
       - label: 'oai_ark_id'
         solr_field: 'collection_ark_id_ssim'
@@ -18,7 +18,7 @@ test:
     admin_email: 'test@localhost'
     sample_id: 'bpl-dev:abc123456'
   document:
-    limit: 1
+    limit: 5
     set_fields:
       - label: 'oai_ark_id'
         solr_field: 'collection_ark_id_ssim'
@@ -27,8 +27,9 @@ staging:
   provider:
     repository_name: 'Commonwealth OAI Provider Staging'
     respository_url: 'https://oai-dc3dev.bpl.org/catalog/oai'
-    record_prefix: 'oai:digitalcommonwealth.org'
-    admin_email: ''
+    record_prefix: 'oai:dc3dev.bpl.org'
+    admin_email: 'staging@localhost'
+    sample_id: 'bpl-dev:abc123456'
   document:
     limit: 250
     set_fields:
@@ -40,7 +41,8 @@ production:
     repository_name: 'Commonwealth OAI Provider Production'
     respository_url: 'https://oai.digitalcommonwealth.org/catalog/oai'
     record_prefix: 'oai:digitalcommonwealth.org'
-    admin_email: ''
+    admin_email: 'admin@digitalcommonwealth.org'
+    sample_id: 'commonwealth:abc123456'
   document:
     limit: 250
     set_fields:

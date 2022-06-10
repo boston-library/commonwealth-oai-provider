@@ -2,7 +2,7 @@
 
 class OaiModsFormat < OAI::Provider::Metadata::Format
   OAI_MODS_FORMAT_ATTRS = {
-    prefix: 'oai_mods',
+    prefix: 'mods',
     schema: 'http://www.openarchives.org/OAI/2.0',
     namespace: 'http://www.openarchives.org/OAI/2.0',
     element_namespace: 'mods',

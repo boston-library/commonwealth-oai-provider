@@ -9,7 +9,7 @@ class CuratorListSet < BlacklightOaiProvider::SolrSet
 
   class << self
     def all
-      builder = search_service.search_builder.merge({})
+      builder = search_service.search_builder.merge({ rows: 10000 })
       response = search_service.repository.search(builder)
 
       sets_from_fields(response.documents) if response.documents
