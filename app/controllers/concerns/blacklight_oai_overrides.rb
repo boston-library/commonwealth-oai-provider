@@ -5,6 +5,8 @@ module BlacklightOaiOverrides
 
   included do
     include InstanceMethods
+
+    before_action :sets_search_service, only: [:oai]
   end
 
   module InstanceMethods
@@ -16,6 +18,12 @@ module BlacklightOaiOverrides
 
     def oai_provider
       @oai_provider ||= CuratorSolrDocumentProvider.new(self, oai_config)
+    end
+
+    private
+
+    def sets_search_service
+      blacklight_config.search_builder_class = SetsSearchBuilder if oai_params[:verb] == 'ListSets'
     end
   end
 end

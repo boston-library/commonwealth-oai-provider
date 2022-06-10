@@ -8,7 +8,7 @@ ruby '2.7.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6'
 # Use Puma as the app server
-gem 'puma', '~> 5.6'
+gem 'puma', '~> 5.6', group: %i(development test staging)
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -44,7 +44,7 @@ group :test do
   gem 'webmock', '~> 3.14'
 end
 
-gem 'sd_notify', group: %i(production staging)
+gem 'sd_notify', group: %i(staging)
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

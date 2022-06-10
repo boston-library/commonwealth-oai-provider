@@ -6,9 +6,9 @@ development:
     admin_email: 'dev@localhost'
     sample_id: 'bpl-dev:abc123456'
   document:
-    limit: 25
+    limit: 1
     set_fields:
-      - label: 'ark_id'
+      - label: 'oai_ark_id'
         solr_field: 'collection_ark_id_ssim'
 test:
   provider:
@@ -18,10 +18,10 @@ test:
     admin_email: 'test@localhost'
     sample_id: 'bpl-dev:abc123456'
   document:
-    limit: 25
+    limit: 1
     set_fields:
-      - label: 'collection'
-        solr_field: 'collection'
+      - label: 'oai_ark_id'
+        solr_field: 'collection_ark_id_ssim'
 
 staging:
   provider:
@@ -30,10 +30,10 @@ staging:
     record_prefix: 'oai:digitalcommonwealth.org'
     admin_email: ''
   document:
-    limit: 25
+    limit: 250
     set_fields:
-      - label: ''
-        solr_field: ''
+      - label: 'oai_ark_id'
+        solr_field: 'collection_ark_id_ssim'
 
 production:
   provider:
@@ -42,7 +42,7 @@ production:
     record_prefix: 'oai:digitalcommonwealth.org'
     admin_email: ''
   document:
-    limit: 25
+    limit: 250
     set_fields:
-      - label: ''
-        solr_field: ''
+      - label: 'oai_ark_id'
+        solr_field: 'collection_ark_id_ssim'
