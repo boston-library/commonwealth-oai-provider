@@ -8,22 +8,14 @@ require_relative 'config/application'
 Rails.application.load_tasks
 
 if %w(development test).member?(ENV.fetch('RAILS_ENV', 'development'))
-  require 'rspec/core/rake_task'
-  RSpec::Core::RakeTask.new(:spec)
-
   require 'rubocop/rake_task'
   RuboCop::RakeTask.new(:rubocop) do |task|
-    task.requires << 'rubocop-rails'
-    task.requires << 'rubocop-rspec'
-    task.requires << 'rubocop-performance'
     task.fail_on_error = true
-    # WARNING: Make sure the bottom 3 lines are always commented out before committing
-    # task.options << '--safe-auto-correct'
-    # task.options << '--disable-uncorrectable'
-    # task.options << '-d'
   end
 
   require 'solr_wrapper/rake_task'
+
+  task default: :ci
 
   desc 'Lint, set up test app, spin up Solr, and run specs'
   task ci: [:rubocop] do
@@ -35,5 +27,4 @@ if %w(development test).member?(ENV.fetch('RAILS_ENV', 'development'))
       end
     end
   end
-  task default: [:ci]
 end

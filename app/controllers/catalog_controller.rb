@@ -204,13 +204,13 @@ class CatalogController < ApplicationController
     # if the name of the solr.SuggestComponent provided in your solrconfig.xml is not the
     # default 'mySuggester', uncomment and provide it below
     # config.autocomplete_suggester = 'mySuggester'
+  end
 
-    def render_bookmarks_control?
-      false
-    end
+  def render_bookmarks_control?
+    false
+  end
 
-    def render_sms_action?
-      false
-    end
+  def render_sms_action?
+    false
   end
 end
