@@ -1,0 +1,169 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://127.0.0.1:8984/solr/commonwealth_oai_test/select?fl=system_create_dtsi&fq=%2Bharvesting_status_bsi%3Atrue&fq=%2Bcurator_model_suffix_ssi%3ADigitalObject&rows=1&sort=system_create_dtsi+asc&wt=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-security-policy:
+      - default-src 'none'; base-uri 'none'; connect-src 'self'; form-action 'self';
+        font-src 'self'; frame-ancestors 'none'; img-src 'self'; media-src 'self';
+        style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self';
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      last-modified:
+      - Mon, 13 Jun 2022 20:47:27 GMT
+      etag:
+      - '"NDAwMDAwMDAwMDAwMDAwMFNvbHI="'
+      content-type:
+      - application/json;charset=utf-8
+      content-length:
+      - '489'
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "responseHeader":{
+            "status":0,
+            "QTime":1,
+            "params":{
+              "fl":"system_create_dtsi",
+              "fq":["+harvesting_status_bsi:true",
+                "+curator_model_suffix_ssi:DigitalObject"],
+              "sort":"system_create_dtsi asc",
+              "rows":"1",
+              "wt":"json"}},
+          "response":{"numFound":0,"start":0,"numFoundExact":true,"docs":[]
+          },
+          "facet_counts":{
+            "facet_queries":{},
+            "facet_fields":{},
+            "facet_ranges":{},
+            "facet_intervals":{},
+            "facet_heatmaps":{}}}
+  recorded_at: Mon, 13 Jun 2022 20:47:29 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8984/solr/commonwealth_oai_test/select?fl=system_create_dtsi&fq=%2Bharvesting_status_bsi%3Atrue&fq=%2Bcurator_model_suffix_ssi%3ADigitalObject&rows=1&sort=system_create_dtsi+desc&wt=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-security-policy:
+      - default-src 'none'; base-uri 'none'; connect-src 'self'; form-action 'self';
+        font-src 'self'; frame-ancestors 'none'; img-src 'self'; media-src 'self';
+        style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self';
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      last-modified:
+      - Mon, 13 Jun 2022 20:47:27 GMT
+      etag:
+      - '"NDAwMDAwMDAwMDAwMDAwMFNvbHI="'
+      content-type:
+      - application/json;charset=utf-8
+      content-length:
+      - '490'
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "responseHeader":{
+            "status":0,
+            "QTime":1,
+            "params":{
+              "fl":"system_create_dtsi",
+              "fq":["+harvesting_status_bsi:true",
+                "+curator_model_suffix_ssi:DigitalObject"],
+              "sort":"system_create_dtsi desc",
+              "rows":"1",
+              "wt":"json"}},
+          "response":{"numFound":0,"start":0,"numFoundExact":true,"docs":[]
+          },
+          "facet_counts":{
+            "facet_queries":{},
+            "facet_fields":{},
+            "facet_ranges":{},
+            "facet_intervals":{},
+            "facet_heatmaps":{}}}
+  recorded_at: Mon, 13 Jun 2022 20:47:29 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:8984/solr/commonwealth_oai_test/select?fq=%2Bharvesting_status_bsi%3Atrue&fq=%2Bcurator_model_suffix_ssi%3ADigitalObject&fq=system_create_dtsi%3A%5B2022-06-13T20%3A47%3A29Z+TO+2022-06-13T20%3A47%3A29.999Z%5D&fq=collection_ark_id_ssim%3A%22bpl-dev%3A6w924c404a%22&rows=5&sort=system_create_dtsi+asc&wt=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-security-policy:
+      - default-src 'none'; base-uri 'none'; connect-src 'self'; form-action 'self';
+        font-src 'self'; frame-ancestors 'none'; img-src 'self'; media-src 'self';
+        style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self';
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      last-modified:
+      - Mon, 13 Jun 2022 20:47:27 GMT
+      etag:
+      - '"NDAwMDAwMDAwMDAwMDAwMFNvbHI="'
+      content-type:
+      - application/json;charset=utf-8
+      content-length:
+      - '610'
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "responseHeader":{
+            "status":0,
+            "QTime":11,
+            "params":{
+              "fq":["+harvesting_status_bsi:true",
+                "+curator_model_suffix_ssi:DigitalObject",
+                "system_create_dtsi:[2022-06-13T20:47:29Z TO 2022-06-13T20:47:29.999Z]",
+                "collection_ark_id_ssim:\"bpl-dev:6w924c404a\""],
+              "sort":"system_create_dtsi asc",
+              "rows":"5",
+              "wt":"json"}},
+          "response":{"numFound":0,"start":0,"maxScore":0.0,"numFoundExact":true,"docs":[]
+          },
+          "facet_counts":{
+            "facet_queries":{},
+            "facet_fields":{},
+            "facet_ranges":{},
+            "facet_intervals":{},
+            "facet_heatmaps":{}}}
+  recorded_at: Mon, 13 Jun 2022 20:47:29 GMT
+recorded_with: VCR 6.1.0
