@@ -3,7 +3,7 @@
 class SearchBuilder < Blacklight::SearchBuilder
   include Blacklight::Solr::SearchBuilderBehavior
 
-  self.default_processor_chain += [:harvestable_filter, :digital_objects_filter]
+  self.default_processor_chain += %i(harvestable_filter digital_objects_filter)
 
   def harvestable_filter(solr_parameters = {})
     solr_parameters[:fq] ||= []

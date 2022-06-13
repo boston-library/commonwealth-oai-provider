@@ -1,0 +1,108 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'spec/fixtures/**/'
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'scratch.rb'
+  DisplayCopNames: true
+  DisabledByDefault: true
+  TargetRubyVersion: 2.7
+
+Lint/MissingSuper:
+  Enabled: true
+  Exclude:
+    - 'app/models/curator_list_set.rb'
+    - 'app/models/oai_mods_format.rb'
+
+Layout/LineLength:
+  Enabled: true
+  Max: 200
+
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/BlockLength:
+  Max: 30
+
+Metrics/MethodLength:
+  Max: 15
+
+RSpec/EmptyExampleGroup:
+  Exclude:
+    - 'spec/requests/oai_provider_spec.rb'
+
+RSpec/MultipleExpectations:
+  Enabled: true
+  Max: 5
+
+Rails/FilePath:
+  Enabled: true
+  Exclude:
+    - 'config/environments/development.rb'
+    - 'lib/tasks/commonwealth_oai_provider.rake'
+
+Rails/LexicallyScopedActionFilter:
+  Enabled: true
+  Exclude:
+    - 'app/controllers/concerns/blacklight_oai_overrides.rb'
+
+Style/Alias:
+  Enabled: true
+  Exclude:
+    - 'lib/blacklight/document/mods.rb'
+
+Style/BlockComments:
+  Enabled: true
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+Style/ClassAndModuleChildren:
+  Enabled: true
+  Exclude:
+    - 'lib/blacklight/document/mods.rb'
+
+Style/Documentation:
+  Enabled: false
+  Exclude:
+    - 'app/controllers/application_controller.rb'
+    - 'app/controllers/catalog_controller.rb'
+    - 'app/controllers/concerns/blacklight_oai_overrides.rb'
+    - 'app/models/curator_list_set.rb'
+    - 'app/models/curator_list_sets_response.rb'
+    - 'app/models/curator_solr_document_provider.rb'
+    - 'app/models/oai_mods_format.rb'
+    - 'app/models/search_builder.rb'
+    - 'app/models/sets_search_builder.rb'
+    - 'app/models/solr_document.rb'
+    - 'config/application.rb'
+    - 'lib/blacklight/document/mods.rb'
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  Exclude:
+    - 'scratch.rb'
+
+Style/IdenticalConditionalBranches:
+  Enabled: true
+  Exclude:
+    - 'config/environments/production.rb'
+    - 'config/environments/staging.rb'
+
+Style/NumericLiterals:
+  Enabled: true
+  MinDigits: 20
+
+Style/PercentLiteralDelimiters:
+  Enabled: true
+  PreferredDelimiters:
+    default: '{}'
+    '%i': '()'
+    '%I': '()'
+    '%w': '()'
+    '%W': '()'
+
+Style/WordArray:
+  Enabled: true
+  EnforcedStyle: percent
+  MinSize: 5

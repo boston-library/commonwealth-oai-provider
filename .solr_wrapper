@@ -1,0 +1,7 @@
+version: 8.9.0
+port: 8983
+instance_dir: tmp/solr-dev
+collection:
+  persist: true
+  dir: solr
+  name: commonwealth_oai_dev

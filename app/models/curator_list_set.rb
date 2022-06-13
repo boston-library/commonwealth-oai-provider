@@ -40,7 +40,7 @@ class CuratorListSet < BlacklightOaiProvider::SolrSet
     if config.present?
       @solr_field = config[:solr_field]
       @description = config[:description]
-    elsif SOLR_FIELDS.values.include?(label)
+    elsif SOLR_FIELDS.value?(label)
       @solr_field = @label
       @name = name
       @description = description

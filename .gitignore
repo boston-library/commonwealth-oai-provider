@@ -19,8 +19,18 @@
 !/tmp/pids/.keep
 .byebug_history
 
+
+#Ignore coverage
+coverage/*
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
 #Ignore .env files
 .env
+
+/config/credentials/staging.key
+
+/config/credentials/production.key
+
+scratch.rb

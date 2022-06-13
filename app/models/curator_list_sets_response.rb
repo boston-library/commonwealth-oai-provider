@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class CuratorListSetsResponse < BlacklightOaiProvider::Response::ListSets
+  DEFAULT_VERB = 'ListSets'
+
   def to_xml
     raise OAI::SetException unless provider.model.sets
 
@@ -18,6 +20,6 @@ class CuratorListSetsResponse < BlacklightOaiProvider::Response::ListSets
   end
 
   def verb
-    'ListSets'
+    DEFAULT_VERB
   end
 end

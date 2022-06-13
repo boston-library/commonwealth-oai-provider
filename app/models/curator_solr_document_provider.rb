@@ -9,6 +9,7 @@ class CuratorSolrDocumentProvider < BlacklightOaiProvider::SolrDocumentProvider
       nil
     end
   end
+
   register_format(OaiModsFormat.instance)
 
   remove_format('oai_dc')

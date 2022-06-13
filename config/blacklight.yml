@@ -5,11 +5,11 @@ default: &default
 
 development:
   <<: *default
-  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core" %>
+  url: <%= ENV.fetch('SOLR_URL') { 'http://127.0.0.1:8983/solr/commonwealth_oai_dev' } %>
 
 test: &test
   <<: *default
-  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core" %>
+  url: <%= ENV.fetch('SOLR_URL') { 'http://127.0.0.1:8983/solr/commonwealth_oai_test' } %>
 
 staging:
   <<: *default

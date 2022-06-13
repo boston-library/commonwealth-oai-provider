@@ -1,0 +1,7 @@
+version: 8.9.0
+port: 8984
+instance_dir: tmp/solr-test
+collection:
+  persist: false
+  dir: solr
+  name: commonwealth_oai_test

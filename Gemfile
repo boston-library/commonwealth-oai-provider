@@ -5,18 +5,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.6'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.6'
-# Use Puma as the app server
-gem 'puma', '~> 5.6', group: %i(development test staging)
-
-# Reduces boot times through caching; required in config/boot.rb
+gem 'blacklight_oai_provider', '~> 7.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+gem 'puma', '~> 5.6', group: %i(development test staging)
 gem 'rack-cors', '~> 1.1'
+gem 'rails', '~> 6.1.6'
 gem 'rsolr', '~> 2.5'
-gem 'blacklight_oai_provider', '~> 7.0'
 
 group :development, :test do
   gem 'awesome_print', '~> 1.9'
@@ -28,6 +23,7 @@ group :development, :test do
   gem 'rubocop-performance', '~> 1.12', require: false
   gem 'rubocop-rails', '~> 2.12', require: false
   gem 'rubocop-rspec', '~> 2.6', require: false
+  gem 'solr_wrapper', '~> 3.1'
 end
 
 group :development do
@@ -47,4 +43,4 @@ end
 gem 'sd_notify', group: %i(staging)
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
