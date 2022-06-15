@@ -11,7 +11,7 @@ rails_env = ENV.fetch('RAILS_ENV', 'development')
 abort('This app does not support puma in production mode!') if rails_env == 'production'
 
 max_threads_count = ENV.fetch('RAILS_MAX_THREADS', 5)
-min_threads_count = ENV.fetch('RAILS_MIN_THREADS', min_threads_count)
+min_threads_count = ENV.fetch('RAILS_MIN_THREADS', max_threads_count)
 app_dir = File.expand_path('..', __dir__)
 
 threads min_threads_count, max_threads_count
