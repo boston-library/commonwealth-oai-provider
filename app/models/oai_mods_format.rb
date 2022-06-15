@@ -3,8 +3,8 @@
 class OaiModsFormat < OAI::Provider::Metadata::Format
   OAI_MODS_FORMAT_ATTRS = {
     prefix: 'mods',
-    schema: 'http://www.openarchives.org/OAI/2.0',
-    namespace: 'http://www.openarchives.org/OAI/2.0',
+    schema: 'http://www.loc.gov/standards/mods/v3/mods-3-7.xsd',
+    namespace: 'http://www.loc.gov/standards/mods/v3/',
     element_namespace: 'mods',
     fields: []
   }.freeze
