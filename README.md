@@ -1,24 +1,12 @@
-# README
+# CommonwealthOaiProvider
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Provides an OAI-PMH API for the digital repository maintained by Boston Public Library.
 
-Things you may want to cover:
+### Running specs
 
-* Ruby version
+Start the test Solr instance before running the specs:
+```
+$ solr_wrapper --config .solr_wrapper.yml
+$ rspec
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
