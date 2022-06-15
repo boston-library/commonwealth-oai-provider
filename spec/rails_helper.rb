@@ -18,6 +18,9 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
+require 'rake'
+Rails.application.load_tasks
+
 require 'simplecov'
 require 'coveralls'
 
@@ -34,6 +37,10 @@ VCR.configure do |c|
   c.cassette_library_dir = 'spec/vcr'
   c.configure_rspec_metadata!
   c.hook_into :webmock, :faraday
+  # c.default_cassette_options = { record: :new_episodes }
+  c.ignore_request do |request|
+    request.uri =~ /solr/
+  end
   c.allow_http_connections_when_no_cassette = true
 end
 
@@ -50,7 +57,7 @@ end
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
 RSpec.configure do |config|
   # Remove this line to enable support for ActiveRecord
@@ -62,6 +69,13 @@ RSpec.configure do |config|
   #
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = false
+
+  config.before(:suite) do
+    VCR.use_cassette('seed_test_index') do
+      Rake::Task['commonwealth_oai_provider:test_index:seed'].invoke
+    end
+    WebMock.reset!
+  end
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and

@@ -8,7 +8,7 @@ ruby '2.7.6'
 gem 'blacklight', '~> 7.25'
 gem 'blacklight_oai_provider', '~> 7.0'
 gem 'bootsnap', '>= 1.4.4', require: false
-
+gem 'nokogiri', '>= 1.13.6'
 gem 'puma', '~> 5.6', group: %i(development test staging)
 gem 'rack-cors', '~> 1.1'
 gem 'rails', '~> 6.1.6'
@@ -24,7 +24,7 @@ group :development, :test do
   gem 'rubocop-performance', '~> 1.12', require: false
   gem 'rubocop-rails', '~> 2.12', require: false
   gem 'rubocop-rspec', '~> 2.6', require: false
-  gem 'solr_wrapper', '~> 3.1'
+  gem 'solr_wrapper', '~> 4'
 end
 
 group :development do

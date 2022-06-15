@@ -6,40 +6,44 @@
 # the maximum value specified for Puma. Default is set to 5 threads for minimum
 # and maximum; this matches the default thread size of Active Record.
 #
-max_threads_count = ENV.fetch('RAILS_MAX_THREADS', 5) { 5 }
+rails_env = ENV.fetch('RAILS_ENV', 'development')
+
+abort('This app does not support puma in production mode!') if rails_env == 'production'
+
+max_threads_count = ENV.fetch('RAILS_MAX_THREADS', 5)
 min_threads_count = ENV.fetch('RAILS_MIN_THREADS', min_threads_count)
+app_dir = File.expand_path('..', __dir__)
+
 threads min_threads_count, max_threads_count
+workers ENV.fetch('WEB_CONCURRENCY', 2)
 
-# Specifies the `worker_timeout` threshold that Puma will use to wait before
-# terminating a worker in development environments.
-#
-worker_timeout 3600 if ENV.fetch('RAILS_ENV', 'development') == 'development'
+worker_timeout 3600 if rails_env == 'development'
 
-# Specifies the `port` that Puma will listen on to receive requests; default is 3000.
-#
-port ENV.fetch('PORT', 3000)
+environment rails_env
 
-# Specifies the `environment` that Puma will run in.
-#
-environment ENV.fetch('RAILS_ENV', 'development')
+preload_app!
 
-# Specifies the `pidfile` that Puma will use.
-pidfile ENV.fetch('PIDFILE', 'tmp/pids/server.pid')
+# New feature that reduces latency https://github.com/puma/puma/blob/master/5.0-Upgrade.md#lower-latency-better-throughput
+wait_for_less_busy_worker 0.02
 
-# Specifies the number of `workers` to boot in clustered mode.
-# Workers are forked web server processes. If using threads and workers together
-# the concurrency of the application would be max `threads` * `workers`.
-# Workers do not work on JRuby or Windows (both of which do not support
-# processes).
-#
-# workers ENV.fetch("WEB_CONCURRENCY") { 2 }
+# New feature that runs garbage collector when forking workers https://github.com/puma/puma/blob/master/5.0-Upgrade.md#nakayoshi_fork
+nakayoshi_fork
 
-# Use the `preload_app!` method when specifying a `workers` number.
-# This directive tells Puma to first boot the application and load code
-# before forking the application. This takes advantage of Copy On Write
-# process behavior so workers use less memory.
-#
-# preload_app!
+on_restart do
+   puts "Refreshing Gemfile at #{app_dir}/Gemfile"
+   ENV['BUNDLE_GEMFILE'] = "#{app_dir}/Gemfile"
+end
 
-# Allow puma to be restarted by `rails restart` command.
-plugin :tmp_restart
+if rails_env == 'staging'
+  bind "unix://#{app_dir}/tmp/sockets/commonwealth_oai_puma.sock"
+  pidfile "#{app_dir}/tmp/pids/commonwealth_oai_server.pid"
+  state_path "#{app_dir}/tmp/pids/commonwealth_oai_server.state"
+  stdout_redirect("#{app_dir}/log/puma.stdout.log", "#{app_dir}/log/puma.stderr.log", true)
+  activate_control_app "unix://#{app_dir}/tmp/sockets/commonwealth_oai_pumactl.sock"
+else
+  port 3000
+  stdout_redirect('/dev/stdout', '/dev/stderr')
+  state_path "#{app_dir}/tmp/pids/server.state"
+  pidfile "#{app_dir}/tmp/pids/server.pid"
+  plugin :tmp_restart
+end

@@ -22,7 +22,6 @@ if %w(development test).member?(ENV.fetch('RAILS_ENV', 'development'))
     puts 'running continuous integration'
     SolrWrapper.wrap do |solr|
       solr.with_collection do
-        system 'RAILS_ENV=test rake commonwealth_oai_provider:test_index:seed'
         Rake::Task['spec'].invoke
       end
     end

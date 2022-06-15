@@ -1,0 +1,127 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:8984/solr/commonwealth_oai_test/update?wt=json
+    body:
+      encoding: UTF-8
+      string: '[{"id":"bpl-dev:5712m712c","system_create_dtsi":"2022-01-11T17:03:12Z","system_modified_dtsi":"2022-01-11T17:04:29Z","curator_model_ssi":"Curator::DigitalObject","curator_model_suffix_ssi":"DigitalObject","title_info_primary_tsi":"Boston
+        Massacre trial notes","genre_basic_ssim":"Manuscripts","date_tsim":"1770","date_type_ssm":"dateCreated","date_edtf_ssm":"1770","date_start_dtsi":"1770-01-01T00:00:00Z","date_end_dtsi":"1770-12-31T23:59:59.999Z","name_tsim":["Adams,
+        John, 1735-1826","Kidder, Frederic, 1804-1885"],"name_role_tsim":["Author","Former
+        owner"],"name_facet_ssim":["Adams, John, 1735-1826","Kidder, Frederic, 1804-1885"],"related_item_host_ssim":"Manuscripts
+        (America)","subject_topic_tsim":["Boston Massacre, 1770","Trials (Murder)","United
+        States--History--Colonial period, ca. 1600-1775","United States--History--Revolution,
+        1775-1783"],"subject_facet_ssim":["Boston Massacre, 1770","Trials (Murder)","United
+        States--History--Colonial period, ca. 1600-1775","United States--History--Revolution,
+        1775-1783","Wemms, William"],"subject_name_tsim":"Wemms, William","subject_coordinates_geospatial":"42.35,-71.05","subject_point_geospatial":"42.35,-71.05","subject_geojson_facet_ssim":"{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-71.05,42.35]},\"properties\":{\"placename\":\"Boston,
+        MA\"}}","subject_hiergeo_geojson_ssm":"{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[-71.05,42.35]},\"properties\":{\"continent\":\"North
+        and Central America\",\"country\":\"United States\",\"state\":\"Massachusetts\",\"county\":\"Suffolk\",\"city\":\"Boston\"}}","physical_location_ssim":"Boston
+        Public Library","sub_location_tsi":"Rare Books Department","identifier_uri_ss":"https://ark-dc3dev.bpl.org/ark:/50959/5712m712c","identifier_local_other_tsim":"06_01_000710-06_01_000728,
+        06_01_000761","identifier_local_call_tsim":["MS Adams 307","MS Am. 229 (23)","MS
+        G.38.24"],"identifier_local_barcode_tsim":"39999085424867","note_acquisition_tsim":"Acquired
+        by the Boston Public Library ca. 1870. Prior to that date, the notes had been
+        in the possession of Frederic Kidder, who published a transcription of them
+        in 1870.","note_physical_tsim":"Written in ink on individual sheets watermarked
+        with a crown, all were apparently bound together at one time. Currently encapsulated
+        in polyester and housed in a tan cloth box.","note_biographical_tsim":"After
+        the Boston Massacre on March 5th, 1770, Massachusetts Governor Thomas Hutchinson
+        ordered the arrest of Captain Thomas Preston and eight of his soldiers for
+        the crime of murder. Unable to acquire legal representation, Preston and the
+        eight soldiers eventually petitioned John Adams to act on their behalf. A
+        prominent Boston lawyer already active in the patriot cause, Adams agreed
+        to represent the defendants, forming a legal team comprised of Sampson Salter
+        Blowers, Robert Auchmuty, and Josiah Quincy (younger brother of the prosecutor
+        in the case). Preston was tried separately from his men, and all but two of
+        them (Hugh Montgomery and Matthew Kilroy) were acquitted, while Montgomery
+        and Kilroy were convicted of the lesser charge of manslaughter.","note_publications_tsim":"Published
+        in: Historical Manuscripts in the Public Library in the City of Boston, No.
+        2 (1902). pp. 13-20; Kidder, Frederic. History of the Boston Massacre. Albany:
+        Munsell, 1870. p. 10.","note_tsim":["Holograph.","Title devised by cataloger.","This
+        manuscript has been filed under several call numbers, including: MS G.38.24
+        and MS Am. 229 (23). It is currently filed under MS Adams 307.","For further
+        information, consult The Adams Papers, Digital Editions: Legal Papers of John
+        Adams, vol. 3."],"rights_ss":"No known copyright restrictions.","license_ss":"No
+        known restrictions on use.","reuse_allowed_ssi":"no restrictions","digital_origin_ssi":"reformatted_digital","extent_tsi":"10
+        leaves ; 16 cm.","abstract_tsi":"One portion of John Adams'' notes from the
+        trial of the eight British soldiers accused of murder for their role in the
+        Boston Massacre (Rex v. Wemms, et al.). This fragment is comprised of twenty
+        pages, thirteen of which contain writing, along with seven blank pages, and
+        is part of a larger extant body of Adams'' Boston Massacre trial notes. Those
+        pages of notes not held by the BPL are held by the Massachusetts Historical
+        Society.","pubplace_tsi":"Boston","resource_type_manuscript_bsi":true,"type_of_resource_ssim":"Text","lang_term_ssim":"English","publishing_state_ssi":"published","processing_state_ssi":"complete","destination_site_ssim":["commonwealth","bpl"],"hosting_status_ssi":"hosted","harvesting_status_bsi":true,"exemplary_image_ssi":"bpl-dev:1j92g804h","exemplary_image_key_base_ss":"images/bpl-dev:1j92g804h","admin_set_name_ssi":"Colonial
+        and Revolutionary Boston (Collection of Distinction)","admin_set_ark_id_ssi":"bpl-dev:6w924c404","institution_name_ssi":"Boston
+        Public Library","institution_ark_id_ssi":"bpl-dev:4q77fr32b","collection_name_ssim":"Colonial
+        and Revolutionary Boston (Collection of Distinction)","collection_ark_id_ssim":"bpl-dev:6w924c404","filenames_ssim":["06_01_000711","06_01_000712","BostonMassacreTrialNotes-Transcription-FT","BostonMassacreTrialNotes-Transcription","06_01_000710"],"mods_xml_ss":"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","has_searchable_pages_bsi":true,"timestamp":"2022-06-06T18:01:49.073Z"},{"id":"bpl-dev:6w924c404","system_create_dtsi":"2022-01-11T17:00:44Z","system_modified_dtsi":"2022-01-11T17:00:44Z","curator_model_ssi":"Curator::Collection","curator_model_suffix_ssi":"Collection","publishing_state_ssi":"published","destination_site_ssim":["commonwealth","bpl"],"hosting_status_ssi":"hosted","harvesting_status_bsi":true,"title_info_primary_tsi":"Colonial
+        and Revolutionary Boston (Collection of Distinction)","physical_location_ssim":"Boston
+        Public Library","institution_name_ssi":"Boston Public Library","institution_ark_id_ssi":"bpl-dev:4q77fr32b","genre_basic_ssim":["Collections","Manuscripts"],"timestamp":"2022-01-21T20:30:29.574Z"}]'
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-security-policy:
+      - default-src 'none'; base-uri 'none'; connect-src 'self'; form-action 'self';
+        font-src 'self'; frame-ancestors 'none'; img-src 'self'; media-src 'self';
+        style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self';
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      content-type:
+      - application/json;charset=utf-8
+      content-length:
+      - '57'
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "responseHeader":{
+            "status":0,
+            "QTime":121}}
+  recorded_at: Wed, 15 Jun 2022 13:58:41 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8984/solr/commonwealth_oai_test/update?wt=json
+    body:
+      encoding: UTF-8
+      string: '{"commit":{}}'
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-security-policy:
+      - default-src 'none'; base-uri 'none'; connect-src 'self'; form-action 'self';
+        font-src 'self'; frame-ancestors 'none'; img-src 'self'; media-src 'self';
+        style-src 'self' 'unsafe-inline'; script-src 'self'; worker-src 'self';
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      content-type:
+      - application/json;charset=utf-8
+      content-length:
+      - '57'
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "responseHeader":{
+            "status":0,
+            "QTime":245}}
+  recorded_at: Wed, 15 Jun 2022 13:58:41 GMT
+recorded_with: VCR 6.1.0
