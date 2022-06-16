@@ -39,7 +39,6 @@ if rails_env == 'staging'
   pidfile "#{app_dir}/tmp/pids/commonwealth_oai_server.pid"
   state_path "#{app_dir}/tmp/pids/commonwealth_oai_server.state"
   stdout_redirect("#{app_dir}/log/puma.stdout.log", "#{app_dir}/log/puma.stderr.log", true)
-  activate_control_app "unix://#{app_dir}/tmp/sockets/commonwealth_oai_pumactl.sock"
 else
   port 3000
   stdout_redirect('/dev/stdout', '/dev/stderr')
