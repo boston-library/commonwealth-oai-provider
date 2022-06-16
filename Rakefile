@@ -18,7 +18,7 @@ if %w(development test).member?(ENV.fetch('RAILS_ENV', 'development'))
   task default: :ci
 
   desc 'Lint, set up test app, spin up Solr, and run specs'
-  task ci: [:rubocop] do
+  task ci: ['zeitwerk:check',:rubocop] do
     puts 'running continuous integration'
     SolrWrapper.wrap do |solr|
       solr.with_collection do
