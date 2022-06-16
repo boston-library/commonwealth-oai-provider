@@ -32,3 +32,11 @@ $ rails ci
 # OR
 $ rake
 ```
+
+* You can also manually run the rubocop linter by running
+  ```
+     $ rails rubocop
+  ```
+
+* You can run just the specs by running `$ solr_wrapper` in a separate terminal and then run
+  `$ rails spec` in another

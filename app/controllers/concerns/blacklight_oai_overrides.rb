@@ -11,7 +11,6 @@ module BlacklightOaiOverrides
 
   module InstanceMethods
     def oai
-      Rails.logger.info oai_config.awesome_inspect
       body = oai_provider.process_request(oai_params.to_h)
 
       render xml: body, content_type: 'text/xml'

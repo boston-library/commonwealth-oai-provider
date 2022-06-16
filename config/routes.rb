@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :oai_provider
   end
+
+  root to: 'catalog#oai', verb: 'Identify'
 end
