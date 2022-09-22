@@ -3,9 +3,9 @@
 Provides an OAI-PMH API for the digital repository maintained by Boston Public Library.
 
 ## Dependencies
-* **ruby 2.7.6**
-* **rails 6.1.6**
-* **solr 8.9**
+* **ruby 3.0.4**
+* **rails 6.1.7**
+* **solr 8.11.2**
 
 ### NOTE
 This application does NOT have a database so none of the `$rails db:*` commands should be run
