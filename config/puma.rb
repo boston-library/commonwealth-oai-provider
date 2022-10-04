@@ -7,9 +7,6 @@
 # and maximum; this matches the default thread size of Active Record.
 #
 rails_env = ENV.fetch('RAILS_ENV', 'development')
-
-abort('This app does not support puma in production mode!') if rails_env == 'production'
-
 max_threads_count = ENV.fetch('RAILS_MAX_THREADS', 5)
 min_threads_count = ENV.fetch('RAILS_MIN_THREADS', max_threads_count)
 app_dir = File.expand_path('..', __dir__)
@@ -34,7 +31,7 @@ on_restart do
    ENV['BUNDLE_GEMFILE'] = "#{app_dir}/Gemfile"
 end
 
-if rails_env == 'staging'
+if %w(staging production).member?(rails_env)
   bind "unix://#{app_dir}/tmp/sockets/commonwealth_oai_puma.sock"
   pidfile "#{app_dir}/tmp/pids/commonwealth_oai_server.pid"
   state_path "#{app_dir}/tmp/pids/commonwealth_oai_server.state"
