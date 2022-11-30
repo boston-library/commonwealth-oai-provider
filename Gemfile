@@ -3,16 +3,16 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '~> 3.0.4'
+ruby '~> 3.0.5'
 
-gem 'blacklight', '~> 7.25'
+gem 'blacklight', '~> 7.32', '< 8'
 gem 'blacklight_oai_provider', '~> 7.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'nokogiri', '>= 1.13.8'
-gem 'puma', '~> 5.6', group: %i(development test staging)
+gem 'puma', '~> 5.6'
 gem 'rack-cors', '~> 1.1'
 gem 'rails', '~> 6.1.7', '< 7'
-gem 'redis', '~> 4.6'
+gem 'redis', '~> 4.7', '< 5'
 gem 'rsolr', '~> 2.5'
 
 group :development, :test do
@@ -42,7 +42,7 @@ group :test do
   gem 'webmock', '~> 3.18'
 end
 
-gem 'sd_notify', group: %i(staging)
+gem 'sd_notify', group: %i(staging production)
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
