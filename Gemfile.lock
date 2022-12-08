@@ -161,7 +161,7 @@ GEM
     minitest (5.16.3)
     msgpack (1.6.0)
     nio4r (2.5.8)
-    nokogiri (1.13.9-x86_64-linux)
+    nokogiri (1.13.10-x86_64-linux)
       racc (~> 1.4)
     oai (1.2.1)
       builder (>= 3.1.0)
@@ -179,7 +179,7 @@ GEM
     public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
-    racc (1.6.0)
+    racc (1.6.1)
     rack (2.2.4)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
@@ -322,7 +322,7 @@ DEPENDENCIES
   coveralls
   dotenv-rails (~> 2.8)
   listen (~> 3.3)
-  nokogiri (>= 1.13.8)
+  nokogiri (>= 1.13.10)
   pry (~> 0.13.1)
   pry-rails
   puma (~> 5.6)
