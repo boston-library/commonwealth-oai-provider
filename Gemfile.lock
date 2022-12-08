@@ -322,7 +322,7 @@ DEPENDENCIES
   coveralls
   dotenv-rails (~> 2.8)
   listen (~> 3.3)
-  nokogiri (>= 1.13.8)
+  nokogiri (>= 1.13.10)
   pry (~> 0.13.1)
   pry-rails
   puma (~> 5.6)

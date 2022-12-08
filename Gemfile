@@ -8,7 +8,7 @@ ruby '~> 3.0.5'
 gem 'blacklight', '~> 7.32', '< 8'
 gem 'blacklight_oai_provider', '~> 7.0'
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'nokogiri', '>= 1.13.8'
+gem 'nokogiri', '>= 1.13.10'
 gem 'puma', '~> 5.6'
 gem 'rack-cors', '~> 1.1'
 gem 'rails', '~> 6.1.7', '< 7'
