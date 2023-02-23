@@ -17,6 +17,10 @@ gem 'rsolr', '~> 2.5'
 
 group :development, :test do
   gem 'awesome_print', '~> 1.9'
+  gem 'capistrano', '~> 3.17', require: false
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', '~> 1.4', require: false
+  gem 'capistrano-rvm'
   gem 'dotenv-rails', '~> 2.8', require: 'dotenv/rails-now'
   gem 'pry', '~> 0.13.1'
   gem 'pry-rails'
