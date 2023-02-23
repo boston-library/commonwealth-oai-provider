@@ -9,7 +9,7 @@ set :use_sudo, false
 set :stage_case, ENV['STAGE_NAME']
 set :user, ENV['DEPLOY_USER']
 
-set :application, 'bpldc_authority_api'
+set :application, 'commonwealth-oai-provider'
 set :repo_url, "https://github.com/boston-library/#{fetch(:application)}.git"
 ## Make user home path dynamic.
 set :deploy_to, "/home/#{fetch(:user)}/railsApps/#{fetch(:application)}"
