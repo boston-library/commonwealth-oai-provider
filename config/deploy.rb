@@ -58,8 +58,8 @@ namespace :boston_library do
   desc "#{fetch(:application)} restart #{fetch(:application)}_puma service"
   task :"restart_#{fetch(:application)}_puma" do
     on roles(:app), in: :sequence, wait: 5 do
-      # execute "sudo /bin/systemctl stop #{fetch(:application)}_puma.socket #{fetch(:application)}_puma.service"
-      # sleep(5)
+      execute "sudo /bin/systemctl stop #{fetch(:application)}_puma.socket #{fetch(:application)}_puma.service"
+      sleep(5)
       execute "sudo /bin/systemctl start #{fetch(:application)}_puma.socket #{fetch(:application)}_puma.service"
       sleep(5)
     end
@@ -80,7 +80,7 @@ namespace :boston_library do
   end
 end
 
-after :'bundler:config', :'boston_library:gem_update'
+after :'bundler:config', :'boston_lbrary:gem_update'
 after :'boston_library:gem_update', :'boston_library:rvm_install_ruby'
 after :'boston_library:rvm_install_ruby', :'boston_library:install_bundler'
 after :'deploy:cleanup', :"boston_library:restart_#{fetch(:application)}_puma"
