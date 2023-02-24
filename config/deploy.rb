@@ -60,7 +60,7 @@ namespace :boston_library do
     on roles(:app), in: :sequence, wait: 5 do
       # execute "sudo /bin/systemctl stop #{fetch(:application)}_puma.socket #{fetch(:application)}_puma.service"
       # sleep(5)
-      execute "sudo /bin/systemctl start #{fetch(:application)}_puma.socket #{fetch(:application)}_puma.service"
+      execute "sudo /bin/systemctl restart #{fetch(:application)}_puma.socket #{fetch(:application)}_puma.service"
       sleep(5)
     end
   end

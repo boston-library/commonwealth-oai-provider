@@ -25,7 +25,7 @@ test:
 
 staging:
   provider:
-    repository_name: 'Commonwealth OAI Provider Staging - Damiel Miao'
+    repository_name: 'Commonwealth OAI - Daniel Miao - Provider Staging'
     respository_url: 'https://oai-dc3dev.bpl.org/catalog/oai'
     record_prefix: 'oai:dc3dev.bpl.org'
     admin_email: 'staging@localhost'
