@@ -29,7 +29,7 @@ staging:
     respository_url: 'https://oai-dc3dev.bpl.org/catalog/oai'
     record_prefix: 'oai:dc3dev.bpl.org'
     admin_email: 'staging@localhost'
-    sample_id: 'bpl-dev:def123456'
+    sample_id: 'bpl-dev:abc123456'
   document:
     limit: 250
     set_fields:
