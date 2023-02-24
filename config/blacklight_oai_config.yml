@@ -28,7 +28,7 @@ staging:
     repository_name: 'Commonwealth OAI Provider Staging'
     respository_url: 'https://oai-dc3dev.bpl.org/catalog/oai'
     record_prefix: 'oai:dc3dev.bpl.org'
-    admin_email: 'staging@localhost@daniel_miao'
+    admin_email: 'staging@localhostlocalhost'
     sample_id: 'bpl-dev:abc123456'
   document:
     limit: 250
