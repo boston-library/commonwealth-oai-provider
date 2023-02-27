@@ -25,7 +25,7 @@ test:
 
 staging:
   provider:
-    repository_name: 'Commonwealth OAI =Oregon= Provider Staging'
+    repository_name: 'Commonwealth OAI =Atlanta= Provider Staging'
     respository_url: 'https://oai-dc3dev.bpl.org/catalog/oai'
     record_prefix: 'oai:dc3dev.bpl.org'
     admin_email: 'staging@localhost'
