@@ -25,7 +25,6 @@ set :pty, true
 ## config/deploy/staging.rb cannot be removed from <project>/shared/ directory, because it is temporarily not forcibly using ssl.
 ## Otherwise "curl server_IP" returns 301.
 append :linked_files, 'config/credentials/staging.key', 'config/environments/staging.rb', 'config/credentials/production.key'
-# append :linked_files, 'config/credentials/staging.key', 'config/credentials/production.key'
 append :linked_dirs, 'log', 'tmp/cache', 'tmp/pids', 'tmp/sockets', 'bundle'
 
 # Default value for keep_releases is 5
