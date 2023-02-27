@@ -31,7 +31,7 @@ append :linked_dirs, 'log', 'tmp/cache', 'tmp/pids', 'tmp/sockets', 'bundle'
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
-# Costomized tasks that restart our services
+# Customized tasks that restart our services
 namespace :boston_library do
   desc 'Gem update'
   task :gem_update do
