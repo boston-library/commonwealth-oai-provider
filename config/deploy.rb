@@ -59,12 +59,25 @@ namespace :boston_library do
   desc "Update ruby version for systemd service"
   task :update_service_ruby do
     on roles(:app) do
-      execute("export SERVICE_RUBY_VERSION=`cat .ruby-version`")
-      execute("sudo rm /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf")
-      execute("echo '[Service]' > override.conf")
-      execute("echo 'Environment=SERVICE_RUBY_VERSION=${SERVICE_RUBY_VERSION}' >> override.conf")
-      execute("sudo mv override.conf /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf")
-      execute("sudo /bin/systemctl daemon-reload")
+      execute("pwd; cd /home/deployer/railsApps/commonwealth-oai-provider/current; ls -alt")
+      # execute('export SERVICE_RUBY_VERSION=$(cat /home/deployer/railsApps/commonwealth-oai-provider/current/.ruby-version); echo ${SERVICE_RUBY_VERSION}')
+      execute("SERVICE_RUBY_VERSION=`cat /home/deployer/railsApps/commonwealth-oai-provider/current/.ruby-version`
+              echo ${SERVICE_RUBY_VERSION}
+              sudo rm /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf
+              echo '[Service]' > override.conf
+              echo \"Environment=SERVICE_RUBY_VERSION=${SERVICE_RUBY_VERSION}\" >> override.conf
+              sudo mv override.conf /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf
+              sudo /bin/systemctl daemon-reload")
+
+      #m#execute("export SERVICE_RUBY_VERSION=`cat /home/deployer/railsApps/commonwealth-oai-provider/current/.ruby-version`; echo ${SERVICE_RUBY_VERSION}; sudo rm /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf; echo '[Service]' > override.conf; echo \"Environment=SERVICE_RUBY_VERSION=${SERVICE_RUBY_VERSION}\" >> override.conf; sudo mv override.conf /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf; sudo /bin/systemctl daemon-reload")
+
+      # execute("export SERVICE_RUBY_VERSION=3.0.5; echo ${SERVICE_RUBY_VERSION}")
+      #m# execute("echo ${SERVICE_RUBY_VERSION}")
+      # execute("sudo rm /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf")
+      #m# execute("echo '[Service]' > override.conf")
+      # execute("echo 'Environment=SERVICE_RUBY_VERSION=${SERVICE_RUBY_VERSION}' >> override.conf")
+      #m# execute("sudo mv override.conf /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf")
+      #m# execute("sudo /bin/systemctl daemon-reload")
     end
   end  
 
