@@ -29,6 +29,8 @@ Metrics/AbcSize:
 
 Metrics/BlockLength:
   Max: 30
+  Exclude:
+    - 'config/deploy.rb'
 
 Metrics/MethodLength:
   Max: 15
