@@ -64,6 +64,7 @@ namespace :boston_library do
       execute("echo '[Service]' > override.conf")
       execute("echo 'Environment=SERVICE_RUBY_VERSION=${SERVICE_RUBY_VERSION}' >> override.conf")
       execute("sudo mv override.conf /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf")
+      execute("sudo /bin/systemctl daemon-reload")
     end
   end  
 
