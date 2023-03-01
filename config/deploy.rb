@@ -63,7 +63,7 @@ namespace :boston_library do
       # execute('export SERVICE_RUBY_VERSION=$(cat /home/deployer/railsApps/commonwealth-oai-provider/current/.ruby-version); echo ${SERVICE_RUBY_VERSION}')
       execute("SERVICE_RUBY_VERSION=`cat /home/deployer/railsApps/commonwealth-oai-provider/current/.ruby-version`
               echo ${SERVICE_RUBY_VERSION}
-              sudo rm /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf
+              sudo rm /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf | true
               echo '[Service]' > override.conf
               echo \"Environment=SERVICE_RUBY_VERSION=${SERVICE_RUBY_VERSION}\" >> override.conf
               sudo mv override.conf /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf
