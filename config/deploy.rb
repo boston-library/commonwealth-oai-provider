@@ -63,8 +63,7 @@ namespace :boston_library do
       execute("sudo rm /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf")
       execute("echo '[Service]' > override.conf")
       execute("echo 'Environment=SERVICE_RUBY_VERSION=${SERVICE_RUBY_VERSION}' >> override.conf")
-      execute("sudo cp override.conf /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf")
-      #execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install bundler:#{fetch(:rvm_bundle_version)}")
+      execute("sudo mv override.conf /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf")
     end
   end  
 
