@@ -64,7 +64,7 @@ namespace :boston_library do
               echo ${SERVICE_RUBY_VERSION}              
               echo '[Service]' > override.conf
               echo \"Environment=SERVICE_RUBY_VERSION=${SERVICE_RUBY_VERSION}\" >> override.conf
-              sudo cp override.conf /etc/systemd/system/\"#{fetch(:application)}\"_puma.service.d/override.conf
+              sudo mv override.conf /etc/systemd/system/\"#{fetch(:application)}\"_puma.service.d/override.conf
               sudo /bin/systemctl daemon-reload")
     end
   end  
