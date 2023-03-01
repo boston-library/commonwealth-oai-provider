@@ -25,7 +25,7 @@ test:
 
 staging:
   provider:
-    repository_name: 'Commonwealth OAI =North Dakuta= Provider Staging'
+    repository_name: 'Commonwealth OAI =Shanghai= Provider Staging'
     respository_url: 'https://oai-dc3dev.bpl.org/catalog/oai'
     record_prefix: 'oai:dc3dev.bpl.org'
     admin_email: 'staging@localhost'
