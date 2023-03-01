@@ -59,14 +59,13 @@ namespace :boston_library do
   desc "Update ruby version for systemd service"
   task :update_service_ruby do
     on roles(:app) do
-      execute("SERVICE_RUBY_VERSION=`cat /home/deployer/railsApps/commonwealth-oai-provider/current/.ruby-version`
+      execute("SERVICE_RUBY_VERSION=`cat /home/deployer/railsApps/\"#{fetch(:application)}\"/current/.ruby-version`
               echo ${SERVICE_RUBY_VERSION}
-              sudo rm /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf | true
+              sudo rm /etc/systemd/system/\"#{fetch(:application)}\"_puma.service.d/override.conf | true
               echo '[Service]' > override.conf
               echo \"Environment=SERVICE_RUBY_VERSION=${SERVICE_RUBY_VERSION}\" >> override.conf
-              sudo cp override.conf /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf
+              sudo cp override.conf /etc/systemd/system/\"#{fetch(:application)}\"_puma.service.d/override.conf
               sudo /bin/systemctl daemon-reload")
-
     end
   end  
 
