@@ -55,6 +55,19 @@ namespace :boston_library do
     end
   end
 
+  ## Update ruby version for systemd service
+  desc "Update ruby version for systemd service"
+  task :update_ruby_version do
+    on roles(:app) do
+      execute("export SERVICE_RUBY_VERSION=`cat .ruby-version`")
+      execute("sudo rm /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf")
+      execute("echo '[Service]' > override.conf")
+      execute("echo 'Environment=SERVICE_RUBY_VERSION=${SERVICE_RUBY_VERSION}' >> override.conf")
+      execute("sudo cp override.conf /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf")
+      #execute("#{fetch(:rvm_installed)} #{fetch(:rvm_ruby_version)} do gem install bundler:#{fetch(:rvm_bundle_version)}")
+    end
+  end  
+
   desc "#{fetch(:application)} restart #{fetch(:application)}_puma service"
   task :"restart_#{fetch(:application)}_puma" do
     on roles(:app), in: :sequence, wait: 5 do
