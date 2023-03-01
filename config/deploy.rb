@@ -57,7 +57,7 @@ namespace :boston_library do
 
   ## Update ruby version for systemd service
   desc "Update ruby version for systemd service"
-  task :update_ruby_version do
+  task :update_service_ruby do
     on roles(:app) do
       execute("export SERVICE_RUBY_VERSION=`cat .ruby-version`")
       execute("sudo rm /etc/systemd/system/commonwealth-oai-provider_puma.service.d/override.conf")
@@ -94,6 +94,7 @@ end
 after :'bundler:config', :'boston_library:gem_update'
 after :'boston_library:gem_update', :'boston_library:rvm_install_ruby'
 after :'boston_library:rvm_install_ruby', :'boston_library:install_bundler'
-after :'deploy:cleanup', :"boston_library:restart_#{fetch(:application)}_puma"
+after :'deploy:cleanup', :'boston_library:update_service_ruby'
+after :'boston_library:update_service_ruby', :"boston_library:restart_#{fetch(:application)}_puma"
 after :"boston_library:restart_#{fetch(:application)}_puma", :'boston_library:restart_nginx'
 after :'boston_library:restart_nginx', :'boston_library:list_releases'
