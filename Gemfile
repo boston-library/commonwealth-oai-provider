@@ -11,7 +11,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'nokogiri', '>= 1.13.10'
 gem 'puma', '~> 5.6'
 gem 'rack-cors', '~> 1.1'
-gem 'rails', '~> 6.1.7.2', '< 7'
+gem 'rails', '~> 6.1.7', '< 7'
 gem 'redis', '~> 4.8', '< 5'
 gem 'rsolr', '~> 2.5'
 
