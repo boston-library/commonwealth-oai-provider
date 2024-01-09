@@ -181,7 +181,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.5)
     minitar (0.9)
-    minitest (5.19.0)
+    minitest (5.20.0)
     msgpack (1.6.0)
     net-imap (0.3.7)
       date
@@ -340,8 +340,8 @@ GEM
     unf_ext (0.0.8.2)
     unicode-display_width (2.3.0)
     vcr (6.1.0)
-    view_component (2.78.0)
-      activesupport (>= 5.0.0, < 8.0)
+    view_component (2.83.0)
+      activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
     webmock (3.18.1)
@@ -351,7 +351,7 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.6.11)
+    zeitwerk (2.6.12)
 
 PLATFORMS
   x86_64-darwin-21
