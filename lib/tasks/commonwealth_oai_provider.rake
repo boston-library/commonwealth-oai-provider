@@ -12,7 +12,7 @@ namespace :commonwealth_oai_provider do
         docs = YAML.safe_load(File.open(File.join(File.join(Rails.root,
                                                             'spec',
                                                             'fixtures',
-                                                            'solr_sample_docs.yml'))), [Symbol])
+                                                            'solr_sample_docs.yml'))), permitted_classes: [Symbol])
         conn = Blacklight.default_index.connection
 
         conn.add docs

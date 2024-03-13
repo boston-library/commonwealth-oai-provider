@@ -3,7 +3,7 @@
 Provides an OAI-PMH API for the digital repository maintained by Boston Public Library.
 
 ## Dependencies
-* **ruby 3.0.5**
+* **ruby 3.1.4**
 * **rails 6.1.7**
 * **solr 8.11.2**
 
