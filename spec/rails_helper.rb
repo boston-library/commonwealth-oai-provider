@@ -21,16 +21,6 @@ end
 require 'rake'
 Rails.application.load_tasks
 
-require 'simplecov'
-require 'coveralls'
-
-Coveralls.wear!('rails')
-
-SimpleCov.formatter = Coveralls::SimpleCov::Formatter
-SimpleCov.start do
-  add_filter '/spec/'
-end
-
 require 'vcr'
 
 VCR.configure do |c|
