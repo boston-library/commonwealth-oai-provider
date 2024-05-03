@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '~> 3.1.4'
+ruby '~> 3.1.5'
 
 gem 'blacklight', '~> 7.32.0', '< 8'
 gem 'blacklight_oai_provider', '~> 7.0.2'
@@ -32,7 +32,6 @@ end
 
 group :development do
   gem 'listen', '~> 3.3'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
 
 group :test do
