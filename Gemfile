@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '~> 3.1.5'
+ruby '~> 3.1.6'
 
 gem 'blacklight', '~> 7.32.0', '< 8'
 gem 'blacklight_oai_provider', '~> 7.0.2'
