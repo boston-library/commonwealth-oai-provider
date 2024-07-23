@@ -250,8 +250,8 @@ GEM
     redis (4.8.0)
     regexp_parser (2.6.0)
     retriable (3.1.2)
-    rexml (3.2.8)
-      strscan (>= 3.0.9)
+    rexml (3.3.2)
+      strscan
     rsolr (2.5.0)
       builder (>= 2.1.2)
       faraday (>= 0.9, < 3, != 2.0.0)
@@ -381,7 +381,7 @@ DEPENDENCIES
   webmock (~> 3.18)
 
 RUBY VERSION
-   ruby 3.1.5p252
+   ruby 3.1.6p260
 
 BUNDLED WITH
    2.5.9
