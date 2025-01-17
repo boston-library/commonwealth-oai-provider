@@ -8,6 +8,7 @@ ruby '~> 3.2.5'
 gem 'blacklight', '~> 7.32.0', '< 8'
 gem 'blacklight_oai_provider', '~> 7.0.2'
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'concurrent-ruby', '1.3.4' # NOTE need to lock it to this version for now due to a bug introduced in 1.3.5
 gem 'nokogiri', '>= 1.16.2'
 gem 'puma', '~> 6.4'
 gem 'rack-cors', '~> 1.1'
