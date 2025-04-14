@@ -3,14 +3,18 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '~> 3.2.5'
+ruby '3.3.8'
 
+gem 'base64' # NOTE: Needed here to resolve deprecation about not being a default gem in 3.4
+gem 'bigdecimal' # NOTE: Needed here to resolve deprecation about not being a default gem in 3.4
 gem 'blacklight', '~> 7.32.0', '< 8'
 gem 'blacklight_oai_provider', '~> 7.0.2'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'concurrent-ruby', '1.3.4' # NOTE need to lock it to this version for now due to a bug introduced in 1.3.5
-gem 'nokogiri', '>= 1.16.2'
-gem 'puma', '~> 6.4'
+gem 'drb' # NOTE: Needed here to resolve deprecation about not being a default gem in 3.4
+gem 'mutex_m' # NOTE:  Needed here to resolve deprecation about not being a default gem in 3.4 
+gem 'nokogiri', '>= 1.18.7'
+gem 'puma', '~> 6.6'
 gem 'rack-cors', '~> 1.1'
 gem 'rails', '~> 7.0.8' # NOTE can't update to rails 7.1 with current version of blacklight
 gem 'redis', '~> 5'
