@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.3.8'
+ruby '3.3.9'
 
 gem 'base64' # NOTE: Needed here to resolve deprecation about not being a default gem in 3.4
 gem 'bigdecimal' # NOTE: Needed here to resolve deprecation about not being a default gem in 3.4
@@ -13,7 +13,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'concurrent-ruby', '1.3.4' # NOTE need to lock it to this version for now due to a bug introduced in 1.3.5
 gem 'drb' # NOTE: Needed here to resolve deprecation about not being a default gem in 3.4
 gem 'mutex_m' # NOTE:  Needed here to resolve deprecation about not being a default gem in 3.4 
-gem 'nokogiri', '>= 1.18.7'
+gem 'nokogiri', '>= 1.18.9'
 gem 'puma', '~> 6.6'
 gem 'rack-cors', '~> 1.1'
 gem 'rails', '~> 7.0.8' # NOTE can't update to rails 7.1 with current version of blacklight
@@ -32,7 +32,7 @@ group :development, :test do
   gem 'rubocop-performance', '~> 1.15', require: false
   gem 'rubocop-rails', '~> 2.16', require: false
   gem 'rubocop-rspec', require: false
-  gem 'solr_wrapper', '~> 4'
+  gem 'solr_wrapper', '~> 4.1'
 end
 
 group :development do
@@ -48,4 +48,4 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
+gem 'tzinfo-data', platforms: %i(windows jruby)
