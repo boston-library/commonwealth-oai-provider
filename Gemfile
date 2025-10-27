@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.3.9'
+ruby '3.3.10'
 
 gem 'base64' # NOTE: Needed here to resolve deprecation about not being a default gem in 3.4
 gem 'bigdecimal' # NOTE: Needed here to resolve deprecation about not being a default gem in 3.4
