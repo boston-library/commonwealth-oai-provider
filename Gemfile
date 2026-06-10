@@ -14,7 +14,7 @@ gem 'concurrent-ruby', '1.3.4' # NOTE need to lock it to this version for now du
 gem 'drb' # NOTE: Needed here to resolve deprecation about not being a default gem in 3.4
 gem 'mutex_m' # NOTE:  Needed here to resolve deprecation about not being a default gem in 3.4 
 gem 'nokogiri', '>= 1.18.9'
-gem 'puma', '~> 6.6'
+gem 'puma', '~> 7.2'
 gem 'rack-cors', '~> 1.1'
 gem 'rails', '~> 7.0.8' # NOTE can't update to rails 7.1 with current version of blacklight
 gem 'redis', '~> 5'
