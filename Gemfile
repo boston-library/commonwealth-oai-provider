@@ -10,7 +10,7 @@ gem 'bigdecimal' # NOTE: Needed here to resolve deprecation about not being a de
 gem 'blacklight', '~> 7.32.0', '< 8'
 gem 'blacklight_oai_provider', '~> 7.0.2'
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'concurrent-ruby', '1.3.4' # NOTE need to lock it to this version for now due to a bug introduced in 1.3.5
+gem 'concurrent-ruby', '1.3.7' # NOTE need to lock it to this version for now due to a bug introduced in 1.3.5
 gem 'drb' # NOTE: Needed here to resolve deprecation about not being a default gem in 3.4
 gem 'mutex_m' # NOTE:  Needed here to resolve deprecation about not being a default gem in 3.4 
 gem 'nokogiri', '>= 1.18.9'
