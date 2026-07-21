@@ -1,4 +1,4 @@
-version: 8.11.2
+version: 8.11.4
 port: 8983
 instance_dir: tmp/solr-dev
 collection:
