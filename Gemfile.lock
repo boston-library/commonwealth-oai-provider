@@ -113,7 +113,7 @@ GEM
       tins (~> 1.32)
     crack (0.4.5)
       rexml
-    crass (1.0.7)
+    crass (1.0.8)
     date (3.5.1)
     debug (1.9.2)
       irb (~> 1.10)
